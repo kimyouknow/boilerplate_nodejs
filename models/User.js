@@ -40,7 +40,7 @@ userSchema.pre('save', function(next){
     // 위의 req.body로 받아온 userSchema를 나타냄
     let user = this; 
 
-    // 비밀번호를 바꿀때만, if문이 없으면 email이나 name을 바꿔도 password까지 재암호화시켜버림
+    // 비밀번호를 바꿀때만 실행, if문이 없으면 email이나 name을 바꿔도 password까지 재암호화시켜버림
     if(user.isModified('password')){
         // 비밀번호 암호화
         // salt를 일단 생성 -> salt를 이용해서 암호화
