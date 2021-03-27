@@ -1,4 +1,3 @@
-import Axios from "axios";
 import React, { useState } from "react";
 import { useDispatch} from 'react-redux';
 import {loginUser} from '../../../_actions/user_action'
@@ -18,8 +17,8 @@ function LoginPage(props) {
   }
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log('Email: ', Email);
-    console.log('Password: ', Password);
+    // console.log('Email: ', Email);
+    // console.log('Password: ', Password);
     let body = {
       email: Email,
       password: Password

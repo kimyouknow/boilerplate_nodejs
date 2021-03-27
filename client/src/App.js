@@ -11,7 +11,7 @@ export default function App() {
           renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/dashboard" component={RegisterPage} />
+          <Route exact path="/register" component={RegisterPage} />
           <Route exact path="/login" component={LoginPage} />
         </Switch>
       </div>
