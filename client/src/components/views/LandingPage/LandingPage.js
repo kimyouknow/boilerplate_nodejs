@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import axios from 'axios';
-
+import {withRouter} from 'react-router-dom';
 function LandingPage(props) {
 
   useEffect(() => {
@@ -12,6 +12,7 @@ const onClickHandler = () => {
   axios.get('/api/users/logout')
   .then(response => {
       if(response.data.success) {
+        //hostory는  react-router-dom 의 withRouter이게 있어야 사용가능
         props.history.push("/login")
       } else {
         alert('Failed to logout');
@@ -33,4 +34,4 @@ const onClickHandler = () => {
   );
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);

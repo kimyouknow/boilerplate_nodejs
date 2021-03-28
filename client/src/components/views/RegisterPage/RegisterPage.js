@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import {loginUser} from '../../../_actions/user_action'
 import {registerUser} from '../../../_actions/user_action'
 
@@ -39,6 +40,7 @@ function RegisterPage(props) {
     dispatch(registerUser(body))
       .then(response => {
           if(response.payload.success) {
+            //hostory는  react-router-dom 의 withRouter이게 있어야 사용가능
             props.history.push("/login")
           } else {
             alert("Failed to sign up")
@@ -71,4 +73,4 @@ function RegisterPage(props) {
   )
 }
 
-export default RegisterPage;
+export default withRouter(RegisterPage);
